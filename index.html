@@ -53,17 +53,24 @@
       margin: 4rem 0;
     }
     .buttons a {
-      background: linear-gradient(145deg, #FFD700, #e6c200);
+      background: rgba(255, 215, 0, 0.1);
       color: #1b1b1b;
-      padding: 1rem 3rem;
+      padding: 0.5rem 1.5rem;
       margin: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 0 15px #a67c00;
       transition: all 0.3s ease-in-out;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(3px);
+    }
+    .buttons img {
+      height: 30px;
+      width: auto;
     }
     .buttons a:hover {
       background: #fff3b0;
@@ -99,8 +106,12 @@
   </section>
 
   <section class="buttons">
-    <a href="https://discord.gg/y7fhpRfFgA" target="_blank">🦁 Rejoindre le Discord de la Légion du Lion</a>
-    <a href="https://www.facebook.com/Guildes.RK" target="_blank">📘 Voir la page Facebook</a>
+    <a href="https://discord.gg/y7fhpRfFgA" target="_blank">
+      <img src="https://i.imgur.com/J1wAlw9.jpeg" alt="Discord Légion du Lion">Rejoindre le Discord
+    </a>
+    <a href="https://www.facebook.com/Guildes.RK" target="_blank">
+      <img src="https://i.imgur.com/MNJNKoJ.jpeg" alt="Facebook Royaume Kayn">Voir la page Facebook
+    </a>
   </section>
 
   <footer>
