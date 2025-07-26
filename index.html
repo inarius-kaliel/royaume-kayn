@@ -12,16 +12,19 @@
       background: url('https://i.imgur.com/2xFvqQv.jpeg') no-repeat center center fixed;
       background-size: cover;
       color: #e4d8b4;
+      scroll-behavior: smooth;
     }
     header {
       background: rgba(0, 0, 0, 0.6);
       padding: 4rem 1rem 2rem 1rem;
       text-align: center;
       border-bottom: 4px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700;
     }
     header img {
-      max-width: 100%;
+      max-width: 80%;
       height: auto;
+      filter: drop-shadow(0 0 8px #d1b94c);
     }
     .video-section {
       text-align: center;
@@ -32,58 +35,62 @@
       height: 500px;
       border: none;
       border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     }
     .intro {
       max-width: 850px;
       margin: 3rem auto;
       padding: 2rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.7);
       border: 1px solid #333;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
     }
     .intro p {
       font-size: 1.3rem;
       line-height: 1.8;
-      color: #ddd;
+      color: #f3f3f3;
     }
     .buttons {
       text-align: center;
       margin: 4rem 0;
     }
     .buttons a {
-      background: rgba(255, 215, 0, 0.1);
-      color: #1b1b1b;
-      padding: 0.5rem 1.5rem;
+      background: rgba(255, 215, 0, 0.15);
+      color: #f1f1f1;
+      padding: 0.75rem 2rem;
       margin: 1rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #a67c00;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ffd700a8;
       transition: all 0.3s ease-in-out;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      backdrop-filter: blur(3px);
+      gap: 14px;
+      backdrop-filter: blur(4px);
     }
     .buttons img {
-      height: 30px;
-      width: auto;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: transparent;
     }
     .buttons a:hover {
-      background: #fff3b0;
-      color: #000;
-      transform: scale(1.05);
+      background: rgba(255, 240, 200, 0.2);
+      color: #fff;
+      transform: scale(1.07);
     }
     footer {
       text-align: center;
       padding: 2rem;
       font-style: italic;
-      color: #999;
+      color: #aaa;
       background: rgba(0, 0, 0, 0.6);
       border-top: 2px solid #333;
+      font-size: 1.1rem;
     }
   </style>
 </head>
@@ -107,10 +114,10 @@
 
   <section class="buttons">
     <a href="https://discord.gg/y7fhpRfFgA" target="_blank">
-      <img src="https://i.imgur.com/J1wAlw9.jpeg" alt="Discord Légion du Lion">Rejoindre le Discord
+      <img src="https://i.imgur.com/J1wAlw9.png" alt="Discord Légion du Lion">Rejoindre le Discord
     </a>
     <a href="https://www.facebook.com/Guildes.RK" target="_blank">
-      <img src="https://i.imgur.com/MNJNKoJ.jpeg" alt="Facebook Royaume Kayn">Voir la page Facebook
+      <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook Royaume Kayn">Voir la page Facebook
     </a>
   </section>
 
