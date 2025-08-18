@@ -31,8 +31,8 @@
     :root{
       --gold:#FFD700;
       --gold-soft:#ffd700a8;
-      --ink:#0b0b0c;     /* Texte principal sombre sur panneaux clairs */
-      --parch:#fff8e6;   /* Parchemin clair lisible */
+      --ink:#1b160e;             /* texte sombre sur panneaux clairs */
+      --parch:#fff8e6;           /* fond parchemin clair */
       --parch-strong:#fff3d1;
       --line:#cbb889;
     }
@@ -47,43 +47,46 @@
       overflow-x:hidden;
     }
 
-    /* Bandeau supérieur subtil */
+    /* Header NON sticky pour éviter tout chevauchement vidéo */
     header{
-      position:sticky; top:0; z-index:40;
+      position:static;
       background:rgba(0,0,0,.35);
       backdrop-filter:saturate(120%) blur(6px);
       border-bottom:3px solid var(--gold);
       box-shadow:0 0 24px var(--gold-soft);
       padding:.6rem .75rem;
       text-align:center;
+      color:#fff;
     }
-    header .title{margin:0; font-size:1.15rem; color:#fff; letter-spacing:.02em}
+    header .title{margin:0; font-size:1.1rem; letter-spacing:.02em}
 
-    main{max-width:1200px; margin:0 auto; padding:1rem .75rem 2rem; display:grid; gap:1.2rem}
+    main{
+      max-width:1200px;
+      margin:0 auto;
+      padding:1rem .75rem 2rem;
+      display:grid; gap:1.2rem;
+    }
 
-    /* BANNIÈRE GRANDE AVANT LA VIDÉO */
+    /* BANNIÈRE GRANDE en haut (conservée), espace sous bannière pour ne rien couper */
     .banner{
       text-align:center;
-      padding: .6rem 0 0;
+      padding:.6rem 0 0;
     }
     .banner img{
-      /* Taille originale, seulement limitée par la fenêtre */
-      max-width:min(1400px, 98vw);
-      height:auto;
-      width:auto;
-      display:block;
-      margin:0 auto;
-      filter: drop-shadow(0 0 12px #d1b94c);
+      max-width:min(1400px, 98vw);   /* taille originale sauf limite fenêtre */
+      height:auto; width:auto;
+      display:block; margin:0 auto;
+      filter:drop-shadow(0 0 12px #d1b94c);
     }
 
-    /* Panneaux clairs ultra lisibles */
+    /* Panneaux CLAIRS très lisibles (par-dessus l'image de fond) */
     .panel{
       background:linear-gradient(180deg, var(--parch), var(--parch-strong));
       border:1px solid var(--line);
       border-radius:16px;
       box-shadow:
-        0 2px 30px rgba(0,0,0,.25),
-        0 0 12px rgba(255,215,0,.18);
+        0 2px 26px rgba(0,0,0,.16),
+        0 0 10px rgba(255,215,0,.10);
       padding:1.35rem 1.25rem;
     }
     .intro p{
@@ -104,10 +107,10 @@
       line-height:1.8;
     }
 
-    /* CTA après les textes (pas avant la vidéo) */
+    /* CTA après les textes */
     .cta{
       display:flex; flex-wrap:wrap; justify-content:center; gap:16px;
-      margin:.5rem 0 0;
+      margin:.7rem 0 0;
     }
     .cta a{
       background:#fffaf0;
@@ -126,14 +129,18 @@
     }
     .cta img{height:30px; width:30px; border-radius:50%}
 
-    /* Vidéo (après les textes + CTA) */
+    /* VIDÉO : jamais recouverte, dégagement vertical explicite */
     .video-wrap{
-      position:relative; border-radius:16px; overflow:hidden;
+      position:relative;
+      margin-top: .5rem;            /* espace net au-dessus */
+      border-radius:16px;
+      overflow:clip;
       box-shadow:0 2px 30px rgba(0,0,0,.35);
       border:1px solid rgba(255,255,255,.25);
+      background:rgba(0,0,0,.15);   /* liseré doux autour */
     }
     .video-aspect{aspect-ratio:16/9; width:100%}
-    .video-aspect iframe{width:100%; height:100%; border:0}
+    .video-aspect iframe{width:100%; height:100%; border:0; display:block}
 
     /* Features (panneaux clairs) */
     .features{
@@ -158,7 +165,8 @@
       border-radius:12px;
     }
 
-    /* Mobile */
+    /* Motion & mobile */
+    @media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto} }
     @media (max-width:720px){
       .intro p{font-size:1.2rem; line-height:1.9}
       .card p{font-size:1.02rem}
@@ -171,12 +179,12 @@
   </header>
 
   <main role="main" id="contenu">
-    <!-- BANNIÈRE EN GRAND (AVANT LA VIDÉO) -->
+    <!-- BANNIÈRE EN GRAND (CONSERVÉE) -->
     <div class="banner" aria-label="Bannière du Royaume Kayn">
       <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn — Bannière officielle" loading="eager" decoding="async" />
     </div>
 
-    <!-- INTRO CLAIRE + TEXTES LISIBLES -->
+    <!-- INTRO sur PANNEAU CLAIR -->
     <section class="panel intro" aria-labelledby="intro-title">
       <h2 id="intro-title" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Présentation</h2>
       <p>
@@ -193,7 +201,7 @@
         <strong>«&nbsp;Les Sentinelles&nbsp;»</strong>, accessible aux joueurs des <strong>serveurs World of Warcraft JdR associés</strong>.
       </div>
 
-      <!-- BOUTONS APRÈS LES TEXTES -->
+      <!-- CTA APRÈS LES TEXTES -->
       <nav class="cta" aria-label="Liens principaux">
         <a href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener" aria-label="Rejoindre le Discord du Royaume Kayn">
           <img src="https://i.imgur.com/J1wAlw9.png" alt="" loading="lazy" decoding="async" />
@@ -206,7 +214,7 @@
       </nav>
     </section>
 
-    <!-- VIDÉO APRÈS LA BANNIÈRE + TEXTES + CTA -->
+    <!-- VIDÉO : totalement visible, jamais “mangée” -->
     <section class="video-wrap" aria-label="Présentation vidéo">
       <div class="video-aspect">
         <iframe
@@ -219,7 +227,7 @@
       </div>
     </section>
 
-    <!-- Points forts -->
+    <!-- Points forts (panneaux clairs) -->
     <section class="features" aria-label="Ce que nous proposons">
       <article class="card">
         <h3>Campagnes à embranchements</h3>
