@@ -15,71 +15,81 @@
       scroll-behavior: smooth;
     }
     header {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       padding: 4rem 1rem 2rem 1rem;
       text-align: center;
       border-bottom: 4px solid #FFD700;
       box-shadow: 0 0 25px #FFD700;
     }
     header img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 12px #FFD700);
+      filter: drop-shadow(0 0 8px #d1b94c);
     }
     .video-section {
       text-align: center;
-      padding: 3rem 0;
+      margin-top: 2rem;
     }
     .video-section iframe {
       width: 80%;
       height: 500px;
       border: none;
       border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     }
-    .intro, .buttons {
+    .intro {
       max-width: 850px;
       margin: 3rem auto;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
       text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #333;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
-    .intro p, .buttons a {
-      color: #FFD700;
+    .intro p {
       font-size: 1.3rem;
       line-height: 1.8;
+      color: #FFD700;
+    }
+    .buttons {
+      text-align: center;
+      margin: 4rem 0;
     }
     .buttons a {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
+      color: #FFD700;
       padding: 0.75rem 2rem;
       margin: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       text-decoration: none;
       border-radius: 12px;
-      box-shadow: 0 0 20px #FFD700;
+      box-shadow: 0 0 20px #ffd700a8;
       transition: all 0.3s ease-in-out;
       display: inline-flex;
       align-items: center;
       gap: 14px;
+      backdrop-filter: blur(4px);
     }
     .buttons img {
       height: 40px;
       width: 40px;
       border-radius: 50%;
+      background: transparent;
     }
     .buttons a:hover {
-      background: rgba(255, 240, 200, 0.1);
+      background: rgba(255, 240, 200, 0.2);
+      color: #fff;
       transform: scale(1.07);
     }
     footer {
       text-align: center;
       padding: 2rem;
       font-style: italic;
-      color: #FFD700;
+      color: #aaa;
       background: rgba(0, 0, 0, 0.6);
-      border-top: 2px solid #FFD700;
+      border-top: 2px solid #333;
       font-size: 1.1rem;
     }
   </style>
@@ -99,7 +109,7 @@
       Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
       Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
       <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em><br><br>
-      Le Royaume Kayn est un Label de Guildes hébergées sur Le Serveur JDR : "Les Sentinelles" disponibles pour les joueurs hébergés sur les Serveurs World of Warcraft JDR associés.
+      Le Royaume Kayn est un Label de Guildes hébergées sur le Serveur JDR : <strong>"Les Sentinelles"</strong> disponibles pour les joueurs des serveurs World of Warcraft JDR associés.
     </p>
   </section>
 
@@ -122,6 +132,5 @@
       <img src="https://counter1.optistats.ovh/private/compteurdevisite.php?c=khfkz24n95xpuwk6wk3rhlwjebmyu6e3" border="0" title="compteur web" alt="compteur web">
     </a>
   </div>
-
 </body>
 </html>
