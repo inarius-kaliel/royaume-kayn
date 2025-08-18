@@ -1,128 +1,238 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Base -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Royaume Kayn — Campagne RP Warcraft</title>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <meta name="description" content="Anoblissements, quêtes vivantes, objets sacrés. Le Royaume Kayn — Label de Guildes JdR sur « Les Sentinelles ». Rejoins la Légion du Lion et entre dans un Royaume en éveil." />
+  <meta name="theme-color" content="#0b0b0c" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Royaume Kayn" />
+  <meta property="og:title" content="Royaume Kayn — Campagne RP Warcraft" />
+  <meta property="og:description" content="Label de Guildes JdR sur « Les Sentinelles ». Anoblissements, quêtes vivantes, objets sacrés." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.imgur.com/WOCMg41.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts (privacy-aware) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+  <!-- Icons (optionnels, remplace si tu as un favicon propre) -->
+  <link rel="icon" href="https://i.imgur.com/WOCMg41.png" sizes="any" />
+  <link rel="apple-touch-icon" href="https://i.imgur.com/WOCMg41.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Royaume Kayn",
+    "url":"https://example.com",
+    "logo":"https://i.imgur.com/WOCMg41.png",
+    "sameAs":[
+      "https://discord.gg/y7fhpRfFgA",
+      "https://www.facebook.com/Guildes.RK"
+    ],
+    "description":"Label de Guildes JdR sur « Les Sentinelles » (World of Warcraft). Anoblissements, quêtes, objets sacrés."
+  }
+  </script>
+
+  <!-- Styles -->
   <style>
-    body {
-      margin: 0;
-      font-family: 'IM Fell English SC', serif;
-      background: url('https://i.imgur.com/2xFvqQv.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e4d8b4;
-      scroll-behavior: smooth;
+    :root{
+      --gold:#FFD700;
+      --gold-soft:#ffd700a8;
+      --ink:#0b0b0c;
+      --parch:#e4d8b4;
+      --glass:rgba(0,0,0,.60);
+      --glass-strong:rgba(0,0,0,.72);
+      --line:#333;
     }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 4rem 1rem 2rem 1rem;
-      text-align: center;
-      border-bottom: 4px solid #FFD700;
-      box-shadow: 0 0 25px #FFD700;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'IM Fell English SC', serif;
+      color:var(--parch);
+      background:url('https://i.imgur.com/2xFvqQv.jpeg') center/cover fixed no-repeat;
+      scroll-behavior:smooth;
+      overflow-x:hidden;
     }
-    header img {
-      max-width: 80%;
-      height: auto;
-      filter: drop-shadow(0 0 8px #d1b94c);
+    .backdrop{
+      position:fixed; inset:0; pointer-events:none;
+      background:
+        radial-gradient(1200px 600px at 50% 10%, rgba(0,0,0,.25), transparent),
+        linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.85));
     }
-    .video-section {
-      text-align: center;
-      margin-top: 2rem;
+    header{
+      position:sticky; top:0; z-index:40;
+      background:var(--glass);
+      backdrop-filter:saturate(120%) blur(6px);
+      border-bottom:2px solid var(--gold);
+      box-shadow:0 0 25px var(--gold-soft);
+      padding:1rem .75rem;
     }
-    .video-section iframe {
-      width: 80%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    .brand{display:flex; align-items:center; justify-content:center; gap:.75rem}
+    .brand img{height:56px; width:auto; filter:drop-shadow(0 0 8px #d1b94c)}
+    .brand h1{margin:0; font-size:1.6rem; letter-spacing:.03em}
+
+    main{display:grid; gap:2rem; max-width:1100px; margin:0 auto; padding:1.25rem}
+
+    /* Video */
+    .video-wrap{position:relative; border-radius:14px; overflow:hidden; box-shadow:0 0 25px rgba(0,0,0,.6)}
+    .video-aspect{aspect-ratio:16/9; width:100%}
+    .video-aspect iframe{width:100%; height:100%; border:0}
+
+    /* Intro / Hero */
+    .hero{display:grid; gap:1.25rem; margin-top:.25rem}
+    .panel{
+      background:var(--glass-strong);
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 0 15px rgba(255,215,0,.18);
+      padding:1.25rem 1.1rem;
     }
-    .intro {
-      max-width: 850px;
-      margin: 3rem auto;
-      padding: 2rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-      border: 1px solid #333;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+    .hero p{font-size:1.15rem; line-height:1.7; margin:.2rem 0}
+
+    .label{
+      margin-top:.75rem; padding:.85rem 1rem;
+      border:1px dashed rgba(255,215,0,.35);
+      border-radius:12px; background:rgba(255,215,0,.07);
     }
-    .intro p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #f3f3f3;
+
+    /* CTA */
+    .cta{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin:.5rem 0 1.25rem}
+    .cta a{
+      background:rgba(255,215,0,.12);
+      color:#fff; text-decoration:none;
+      padding:.85rem 1.2rem; border-radius:12px;
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-size:1.08rem; letter-spacing:.02em;
+      border:1px solid rgba(255,215,0,.22);
+      box-shadow:0 0 16px var(--gold-soft);
+      transition:transform .25s ease, background .25s ease, opacity .2s ease;
     }
-    .buttons {
-      text-align: center;
-      margin: 4rem 0;
+    .cta a:hover{transform:translateY(-2px) scale(1.03); background:rgba(255,240,200,.18)}
+    .cta img{height:28px; width:28px; border-radius:50%}
+
+    /* Features */
+    .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem}
+    .card{background:var(--glass-strong); border:1px solid var(--line); border-radius:14px; padding:1rem .9rem}
+    .card h3{margin:.1rem 0 .45rem; font-size:1.14rem; color:#fff}
+    .card p{margin:0; font-size:1rem; color:#f3f3f3; line-height:1.6}
+
+    /* Footer */
+    footer{
+      margin-top:2rem; text-align:center; padding:1.1rem;
+      color:#bfb8a0; background:var(--glass); border-top:2px solid var(--line);
+      font-size:1.05rem;
     }
-    .buttons a {
-      background: rgba(255, 215, 0, 0.15);
-      color: #f1f1f1;
-      padding: 0.75rem 2rem;
-      margin: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #ffd700a8;
-      transition: all 0.3s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      backdrop-filter: blur(4px);
+
+    /* Pref. Reduced Motion */
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+      .cta a{transition:none}
     }
-    .buttons img {
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background: transparent;
-    }
-    .buttons a:hover {
-      background: rgba(255, 240, 200, 0.2);
-      color: #fff;
-      transform: scale(1.07);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-style: italic;
-      color: #aaa;
-      background: rgba(0, 0, 0, 0.6);
-      border-top: 2px solid #333;
-      font-size: 1.1rem;
+
+    @media (max-width:720px){
+      .brand h1{font-size:1.22rem}
+      .brand img{height:46px}
+      .hero p{font-size:1.06rem}
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn">
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header role="banner">
+    <div class="brand" aria-label="Le Royaume Kayn">
+      <img src="https://i.imgur.com/WOCMg41.png" alt="Blason du Royaume Kayn" loading="eager" decoding="async" />
+      <h1>Royaume Kayn — Campagne RP Warcraft</h1>
+    </div>
   </header>
 
-  <div class="video-section">
-    <iframe src="https://www.youtube.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
-  </div>
+  <main id="contenu" role="main">
+    <!-- Vidéo -->
+    <section class="video-wrap" aria-label="Présentation vidéo">
+      <div class="video-aspect">
+        <!-- youtube-nocookie pour la confidentialité ; autoplay muet + playsinline -->
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1&rel=0&playsinline=1"
+          title="Présentation du Royaume Kayn"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </section>
 
-  <section class="intro">
-    <p>
-      Entrez dans la <strong>Légion du Lion</strong> : une guilde JdR d'exception.<br>
-      Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
-      Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
-      <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em>
-    </p>
-  </section>
+    <!-- Intro / Manifesto -->
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="panel" aria-live="polite">
+        <h2 id="intro-title" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Présentation</h2>
+        <p>
+          Entre. La <strong>Légion du Lion</strong> t’ouvre ses portes. Ici, chaque joueur trace sa destinée
+          dans une campagne scénarisée à choix, aux récompenses persistantes.
+        </p>
+        <p>
+          Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.
+          <br />
+          <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em>
+        </p>
+        <div class="label" role="note" aria-label="Informations serveurs">
+          <strong>Le Royaume Kayn</strong> est un <em>Label de Guildes</em>, hébergées sur le serveur JdR
+          <strong>«&nbsp;Les Sentinelles&nbsp;»</strong>, accessible aux joueurs des <strong>serveurs World of Warcraft JdR associés</strong>.
+        </div>
+      </div>
 
-  <section class="buttons">
-    <a href="https://discord.gg/y7fhpRfFgA" target="_blank">
-      <img src="https://i.imgur.com/J1wAlw9.png" alt="Discord Légion du Lion">Rejoindre le Discord
-    </a>
-    <a href="https://www.facebook.com/Guildes.RK" target="_blank">
-      <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook Royaume Kayn">Voir la page Facebook
-    </a>
-  </section>
+      <!-- Appels à l'action -->
+      <nav class="cta" aria-label="Liens principaux">
+        <a href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener" aria-label="Rejoindre le Discord du Royaume Kayn">
+          <img src="https://i.imgur.com/J1wAlw9.png" alt="" loading="lazy" decoding="async" />
+          Rejoindre le Discord
+        </a>
+        <a href="https://www.facebook.com/Guildes.RK" target="_blank" rel="noopener" aria-label="Voir la page Facebook du Royaume Kayn">
+          <img src="https://i.imgur.com/MNJNKoJ.png" alt="" loading="lazy" decoding="async" />
+          Voir la page Facebook
+        </a>
+      </nav>
+    </section>
 
-  <footer>
-    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
+    <!-- Features -->
+    <section class="features" aria-label="Ce que nous proposons">
+      <article class="card">
+        <h3>Campagnes à embranchements</h3>
+        <p>Vos choix sculptent les serments, débloquent des quêtes exclusives et forgent les chroniques du Royaume.</p>
+      </article>
+      <article class="card">
+        <h3>Anoblissements & Insignes</h3>
+        <p>Cérémonies, chevalières, objets RP visibles via TRP3&nbsp;: la noblesse se vit et se porte.</p>
+      </article>
+      <article class="card">
+        <h3>Rituels & Mémoire</h3>
+        <p>Veillées, chants d’Ânima, codex vivants&nbsp;: chaque victoire et chaque deuil deviennent héritage.</p>
+      </article>
+      <article class="card">
+        <h3>Communauté exigeante</h3>
+        <p>Accompagnement des nouveaux, calendrier d’événements, entraide et exigence bienveillante.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    «&nbsp;Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.&nbsp;»
   </footer>
+
+  <noscript>
+    <style>.video-wrap{display:none}</style>
+    <div class="panel" style="max-width:1100px;margin:1rem auto">
+      Pour une expérience complète, active JavaScript (lecture vidéo, petits effets d’interface).
+    </div>
+  </noscript>
 </body>
 </html>
