@@ -15,18 +15,21 @@
       scroll-behavior: smooth;
     }
     header {
-      padding: 0;
-      margin: 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4rem 1rem 2rem 1rem;
       text-align: center;
+      border-bottom: 4px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700;
     }
     header img {
       width: 100%;
+      max-width: 1200px;
       height: auto;
-      display: block;
+      filter: drop-shadow(0 0 8px #d1b94c);
     }
     .video-section {
       text-align: center;
-      margin-top: 2rem;
+      margin: 2rem auto;
     }
     .video-section iframe {
       width: 80%;
@@ -34,28 +37,28 @@
       border: none;
       border-radius: 10px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-      background: #000;
     }
-    .panel {
+    .intro {
       max-width: 850px;
       margin: 3rem auto;
       padding: 2rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    }
-    .panel p {
-      font-size: 1.3rem;
-      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
       color: #FFD700;
+    }
+    .intro p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      text-shadow: 0 0 3px #000;
     }
     .buttons {
       text-align: center;
       margin: 4rem 0;
     }
     .buttons a {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       color: #FFD700;
       padding: 0.75rem 2rem;
       margin: 1rem;
@@ -63,11 +66,12 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 12px;
-      box-shadow: 0 0 20px #ffd700a8;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
       transition: all 0.3s ease-in-out;
       display: inline-flex;
       align-items: center;
       gap: 14px;
+      backdrop-filter: blur(4px);
     }
     .buttons img {
       height: 40px;
@@ -84,8 +88,8 @@
       padding: 2rem;
       font-style: italic;
       color: #FFD700;
-      background: rgba(0, 0, 0, 0.7);
-      border-top: 2px solid #333;
+      background: rgba(0, 0, 0, 0.6);
+      border-top: 2px solid #FFD700;
       font-size: 1.1rem;
     }
   </style>
@@ -96,16 +100,17 @@
   </header>
 
   <div class="video-section">
-    <iframe src="https://www.youtube.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
   </div>
 
-  <section class="panel">
+  <section class="intro">
     <p>
       Entrez dans la <strong>Légion du Lion</strong> : une guilde JdR d'exception.<br>
       Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
       Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
       <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em><br><br>
-      <strong>Le Royaume Kayn</strong> est un <em>Label de Guildes</em>, hébergées sur le serveur JdR <strong>« Les Sentinelles »</strong>, accessible à tous les joueurs des serveurs de rôle associés de World of Warcraft.
+      <strong>Le Royaume Kayn</strong> est un <em>Label de Guildes</em>, hébergées sur le serveur JdR <strong>« Les Sentinelles »</strong>, 
+      accessible à tous les joueurs des serveurs de rôle associés de World of Warcraft.
     </p>
   </section>
 
@@ -117,6 +122,10 @@
       <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook Royaume Kayn">Voir la page Facebook
     </a>
   </section>
+
+  <footer>
+    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
+  </footer>
 
   <!-- Compteur de visiteurs -->
   <div style="text-align: center; margin-top: 3rem;">
@@ -130,9 +139,6 @@
     <br>
     <a href="https://www.assoclub.fr">logiciel gestion adhérents association</a>
   </div>
-
-  <footer>
-    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
-  </footer>
 </body>
 </html>
+
