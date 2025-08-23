@@ -14,22 +14,51 @@
       color: #e4d8b4;
       scroll-behavior: smooth;
     }
+
     header {
       background: rgba(0, 0, 0, 0.6);
-      padding: 4rem 1rem 2rem 1rem;
+      padding: 2rem 1rem 1rem 1rem;
       text-align: center;
       border-bottom: 4px solid #FFD700;
       box-shadow: 0 0 25px #FFD700;
     }
+
     header img {
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
       filter: drop-shadow(0 0 8px #d1b94c);
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 215, 0, 0.2);
+      color: #fff;
+    }
+
     .video-section {
       text-align: center;
       margin-top: 2rem;
+      z-index: 1;
     }
+
     .video-section iframe {
       width: 80%;
       height: 500px;
@@ -37,27 +66,30 @@
       border-radius: 10px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     }
-    .intro {
-      max-width: 850px;
+
+    .section {
+      max-width: 900px;
       margin: 3rem auto;
       padding: 2rem;
-      text-align: center;
       background: rgba(0, 0, 0, 0.5);
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    }
-    .intro p {
-      font-size: 1.3rem;
-      line-height: 1.8;
+      box-shadow: 0 0 20px #000;
       color: #FFD700;
     }
+
+    .section p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+    }
+
     .buttons {
       text-align: center;
-      margin: 4rem 0;
+      margin: 3rem 0;
     }
+
     .buttons a {
-      background: rgba(255, 215, 0, 0.15);
-      color: #f1f1f1;
+      background: rgba(0, 0, 0, 0.6);
+      color: #FFD700;
       padding: 0.75rem 2rem;
       margin: 1rem;
       font-size: 1.2rem;
@@ -71,17 +103,19 @@
       gap: 14px;
       backdrop-filter: blur(4px);
     }
+
     .buttons img {
       height: 40px;
       width: 40px;
       border-radius: 50%;
-      background: transparent;
     }
+
     .buttons a:hover {
       background: rgba(255, 240, 200, 0.2);
-      color: #fff;
       transform: scale(1.07);
+      color: #fff;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -91,10 +125,6 @@
       border-top: 2px solid #333;
       font-size: 1.1rem;
     }
-    .visitor-counter {
-      text-align: center;
-      margin: 3rem 0;
-    }
   </style>
 </head>
 <body>
@@ -102,17 +132,24 @@
     <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn">
   </header>
 
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#anoblissement">Joueurs Anoblis au Royaume Kayn</a>
+    <a href="#evenements">Événements</a>
+    <a href="#recrutement">Recrutement</a>
+  </nav>
+
   <div class="video-section">
     <iframe src="https://www.youtube.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
   </div>
 
-  <section class="intro">
+  <section class="section">
     <p>
       Entrez dans la <strong>Légion du Lion</strong> : une guilde JdR d'exception.<br>
       Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
+      Le <strong>Royaume Kayn</strong> est un label de guildes hébergées sur le serveur JdR <em>"Les Sentinelles"</em>, accueillant tout joueur des royaumes JdR associés de World of Warcraft.<br><br>
       Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
-      <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em><br><br>
-      Le Royaume Kayn est un Label de Guildes hébergées sur le serveur JDR <strong>Les Sentinelles</strong>, et accessibles aux joueurs des royaumes JDR associés.
+      <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em>
     </p>
   </section>
 
@@ -125,12 +162,11 @@
     </a>
   </section>
 
-  <div class="visitor-counter">
-    <img src="https://www.simplehitcounter.com/hit.php?uid=3039454&f=6&b=000000&t=ffd700&border=ffd700" alt="Compteur de visites">
-  </div>
-
   <footer>
-    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
+    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”<br><br>
+    <a href="https://www.compteurdevisite.com" title="compteur web">
+      <img src="https://counter1.optistats.ovh/private/compteurdevisite.php?c=khfkz24n95xpuwk6wk3rhlwjebmyu6e3" border="0" title="compteur web" alt="compteur web">
+    </a>
   </footer>
 </body>
 </html>
