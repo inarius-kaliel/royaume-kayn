@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joueurs Anoblis — Royaume Kayn</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IM Fell English SC', serif;
+      background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e4d8b4;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 4px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 1px solid #FFD700;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card h2 {
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: #f4f4f4;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Joueurs Anoblis du Royaume Kayn</h1>
+  </header>
+
+  <main class="container">
+    <!-- Exemple de carte à dupliquer pour chaque joueur -->
+    <div class="card">
+      <h2>Nom du Personnage</h2>
+      <p><strong>Titre :</strong> Chevalier de l'Ouest</p>
+      <p><strong>Race/Classe :</strong> Elfe de la nuit / Druide</p>
+      <p><strong>Date d’anoblissement :</strong> 12/07/2025</p>
+      <p><strong>Citation :</strong> "Par la lune, je veille sur notre royaume."</p>
+    </div>
+    <!-- Ajouter d'autres cartes ici -->
+  </main>
+</body>
+</html>
