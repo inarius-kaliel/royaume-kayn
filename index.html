@@ -11,54 +11,47 @@
       font-family: 'IM Fell English SC', serif;
       background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
       background-size: cover;
-      color: #e4d8b4;
+      color: #FFD700;
       scroll-behavior: smooth;
     }
-
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
-      border-bottom: 4px solid #FFD700;
-      box-shadow: 0 0 25px #FFD700;
-    }
-
-    header img {
-      max-width: 90%;
-      height: auto;
-      filter: drop-shadow(0 0 8px #d1b94c);
-    }
-
     nav {
+      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-      padding: 0.5rem 0;
+      padding: 1rem;
+      box-shadow: 0 0 10px #FFD700;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
     nav a {
       color: #FFD700;
       text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1.1rem;
-      transition: background 0.3s, color 0.3s;
+      margin: 0 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-
     nav a:hover {
-      background-color: rgba(255, 215, 0, 0.2);
-      color: #fff;
+      color: #ffffff;
     }
-
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4rem 1rem 2rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700;
+    }
+    header img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      filter: drop-shadow(0 0 8px #d1b94c);
+    }
     .video-section {
       text-align: center;
       margin-top: 2rem;
-      z-index: 1;
     }
-
     .video-section iframe {
       width: 80%;
       height: 500px;
@@ -66,27 +59,25 @@
       border-radius: 10px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     }
-
-    .section {
-      max-width: 900px;
+    .intro {
+      max-width: 850px;
       margin: 3rem auto;
       padding: 2rem;
+      text-align: center;
       background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #FFD700;
       border-radius: 12px;
-      box-shadow: 0 0 20px #000;
-      color: #FFD700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
     }
-
-    .section p {
+    .intro p {
       font-size: 1.3rem;
       line-height: 1.8;
+      color: #FFD700;
     }
-
     .buttons {
       text-align: center;
-      margin: 3rem 0;
+      margin: 4rem 0;
     }
-
     .buttons a {
       background: rgba(0, 0, 0, 0.6);
       color: #FFD700;
@@ -103,19 +94,17 @@
       gap: 14px;
       backdrop-filter: blur(4px);
     }
-
     .buttons img {
       height: 40px;
       width: 40px;
       border-radius: 50%;
+      background: transparent;
     }
-
     .buttons a:hover {
       background: rgba(255, 240, 200, 0.2);
-      transform: scale(1.07);
       color: #fff;
+      transform: scale(1.07);
     }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -128,26 +117,26 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn">
-  </header>
-
   <nav>
     <a href="#">Accueil</a>
-    <a href="#anoblissement">Joueurs Anoblis au Royaume Kayn</a>
+    <a href="anoblissements.html">Joueurs Anoblis au Royaume Kayn</a>
     <a href="#evenements">Événements</a>
     <a href="#recrutement">Recrutement</a>
   </nav>
+
+  <header>
+    <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn">
+  </header>
 
   <div class="video-section">
     <iframe src="https://www.youtube.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
   </div>
 
-  <section class="section">
+  <section class="intro">
     <p>
       Entrez dans la <strong>Légion du Lion</strong> : une guilde JdR d'exception.<br>
+      Le <strong>Royaume Kayn</strong> est un Label de Guildes hébergées sur le Serveur JDR <em>Les Sentinelles</em>, accessibles aux joueurs de tous les serveurs World of Warcraft JdR associés.<br><br>
       Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
-      Le <strong>Royaume Kayn</strong> est un label de guildes hébergées sur le serveur JdR <em>"Les Sentinelles"</em>, accueillant tout joueur des royaumes JdR associés de World of Warcraft.<br><br>
       Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
       <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em>
     </p>
@@ -163,11 +152,7 @@
   </section>
 
   <footer>
-    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”<br><br>
-    <a href="https://www.compteurdevisite.com" title="compteur web">
-      <img src="https://counter1.optistats.ovh/private/compteurdevisite.php?c=khfkz24n95xpuwk6wk3rhlwjebmyu6e3" border="0" title="compteur web" alt="compteur web">
-    </a>
+    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
   </footer>
 </body>
 </html>
-
