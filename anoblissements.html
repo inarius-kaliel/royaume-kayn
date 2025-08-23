@@ -1,83 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personnages Anoblis — Royaume Kayn</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Cinzel', serif;
+      font-family: 'Playfair Display', serif;
       background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
       background-size: cover;
-      color: gold;
+      color: #d4af37;
+      scroll-behavior: smooth;
     }
+
     nav {
-      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
       padding: 1rem;
-      text-align: center;
-      box-shadow: 0 0 10px #000;
+      box-shadow: 0 2px 10px black;
     }
+
     nav a {
-      color: gold;
-      text-decoration: none;
       margin: 0 1rem;
+      text-decoration: none;
+      color: #d4af37;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      transition: 0.3s;
     }
+
     nav a:hover {
-      text-shadow: 0 0 8px #FFD700;
+      color: #fff2b2;
     }
-    .id-card {
-      background: rgba(0, 0, 0, 0.6);
-      color: gold;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 3rem auto;
+
+    .container {
       max-width: 1000px;
-      box-shadow: 0 0 20px #000, 0 0 10px #FFD700 inset;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
     }
-    .card-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .card-header .blason {
-      width: 120px;
-      margin-bottom: 1rem;
-    }
-    .card-header h2 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
-    }
-    .card-header .titre,
-    .card-header .date {
-      font-size: 1.1rem;
-      font-style: italic;
-    }
-    .card-body {
+
+    .card {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px #000;
     }
-    .portrait {
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+
+    .card img {
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      margin-right: 2rem;
+      object-fit: cover;
+      box-shadow: 0 0 10px #d4af37;
     }
-    .card-info {
-      max-width: 600px;
+
+    .card-content {
+      flex: 1;
     }
-    .card-info p {
-      font-size: 1.2rem;
+
+    .card-content h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      color: #ffd700;
+    }
+
+    .card-content p {
+      font-size: 1.1rem;
       margin: 0.5rem 0;
+      color: #f9e3a1;
     }
-    .citation {
-      font-style: italic;
-      color: #f1c40f;
-      margin-top: 1rem;
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 4rem;
+      border-top: 2px solid #333;
     }
   </style>
 </head>
@@ -89,20 +99,22 @@
     <a href="#">Recrutement</a>
   </nav>
 
-  <section class="id-card">
-    <div class="card-header">
-      <img src="Paladin cerclé.png" alt="Blason du Royaume Kayn" class="blason">
-      <h2>Înnana Âeris</h2>
-      <p class="titre">Dame — Noble du Royaume Kayn</p>
-      <p class="date">Anoblissement le 5 août 2025</p>
-    </div>
-    <div class="card-body">
-      <img src="WoWScrnShot_070625_114448.jpg" alt="Portrait de Înnana Âeris" class="portrait">
-      <div class="card-info">
-        <p><strong>Rôle :</strong> Égide du Royaume Kayn <em>[Tank]</em></p>
-        <p class="citation">"Je suis une jolie fleur de Draenor mais un Bouclier... tu peux aussi te le prendre dans la face !"</p>
+  <div class="container">
+    <div class="card">
+      <img src="https://i.imgur.com/HbIeioE.jpeg" alt="Portrait de Înnana Âeris" />
+      <div class="card-content">
+        <h2>Înnana Âeris</h2>
+        <p><strong>Titre :</strong> Dame</p>
+        <p><strong>Rang :</strong> Noble</p>
+        <p><strong>Date d'anoblissement :</strong> 5 août 2025</p>
+        <p><strong>Rôle :</strong> Égide du Royaume Kayn [Tank]</p>
+        <p><strong>Devise :</strong> Je suis une jolie fleur de Draenor... mais un bouclier, tu peux aussi te le prendre dans la face !</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <footer>
+    Royaume Kayn © 2025 — Tous droits réservés.
+  </footer>
 </body>
 </html>
