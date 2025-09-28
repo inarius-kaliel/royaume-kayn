@@ -1,158 +1,215 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Royaume Kayn — Campagne RP Warcraft</title>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+  <!-- Polices élégantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Métadonnées SEO / Partage -->
+  <meta name="description" content="Le Royaume Kayn — Label de guildes RP sur Les Sentinelles. Quêtes scénarisées, anoblissements, objets TRP3, événements. Rejoins la Légion du Lion." />
+  <meta property="og:title" content="Royaume Kayn — Campagne RP Warcraft" />
+  <meta property="og:description" content="Anoblissements, quêtes vivantes et sceaux d'honneur. Entrez dans le Royaume Kayn." />
+  <meta property="og:image" content="https://i.imgur.com/WOCMg41.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0c0c0f" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'IM Fell English SC', serif;
-      background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      color: #FFD700;
-      scroll-behavior: smooth;
+    :root{
+      --gold:#ffd700;
+      --gold-soft:#e4c869;
+      --panel-bg:rgba(0,0,0,.55); /* panneaux noirs translucides */
+      --ink:#f7f3cf;             /* doré clair lisible */
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --ring:0 0 0 1px rgba(255,215,0,.25) inset;
     }
-    nav {
-      background-color: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      box-shadow: 0 0 10px #FFD700;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Libre Baskerville', serif;
+      color:var(--ink);
+      background:#000 url("https://i.imgur.com/z0xyQ00.jpeg") no-repeat center top fixed;
+      background-size:cover;
+      scroll-behavior:smooth;
     }
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      transition: color 0.3s;
+
+    /* Bandeau & bannière */
+    header{
+      position:relative;
+      padding:1rem 1rem 0 1rem;
+      border-bottom:2px solid rgba(255,215,0,.15);
+      backdrop-filter:saturate(120%) blur(2px);
     }
-    nav a:hover {
-      color: #ffffff;
+    .navbar{
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem;
     }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 4rem 1rem 2rem 1rem;
-      text-align: center;
-      border-bottom: 4px solid #FFD700;
-      box-shadow: 0 0 25px #FFD700;
+    .brand{font-family:'Cinzel',serif; font-weight:800; letter-spacing:.5px}
+    nav a{
+      color:var(--ink); text-decoration:none; font-weight:700;
+      padding:.6rem 1rem; border-radius:10px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,215,0,.22);
+      box-shadow:var(--ring);
+      transition:.2s ease;
     }
-    header img {
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      filter: drop-shadow(0 0 8px #d1b94c);
+    nav a:hover{transform:translateY(-1px); box-shadow:0 8px 22px rgba(0,0,0,.4), var(--ring)}
+    .banner{
+      display:block; width:min(1400px,94vw); margin:1rem auto 0 auto;
+      height:auto; object-fit:contain; filter:drop-shadow(0 10px 30px rgba(0,0,0,.6));
     }
-    .video-section {
-      text-align: center;
-      margin-top: 2rem;
+
+    /* Sections panneaux */
+    .section{
+      max-width:1100px; margin:1.25rem auto; padding:1.25rem;
+      background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:16px;
+      box-shadow:var(--shadow), var(--ring);
     }
-    .video-section iframe {
-      width: 80%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    .section h2{
+      margin:.2rem 0 1rem 0;
+      font-family:'Cinzel',serif; font-weight:800; color:var(--gold);
+      text-shadow:0 0 12px rgba(255,215,0,.25);
     }
-    .intro {
-      max-width: 850px;
-      margin: 3rem auto;
-      padding: 2rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid #FFD700;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    .lead{font-size:1.1rem; line-height:1.75}
+
+    /* Vidéo */
+    .video-wrap{
+      max-width:1100px; margin:1.25rem auto 0 auto;
+      background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:16px; overflow:hidden;
+      box-shadow:var(--shadow), var(--ring);
     }
-    .intro p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #FFD700;
+    .video{
+      position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;
     }
-    .buttons {
-      text-align: center;
-      margin: 4rem 0;
+    .video iframe{
+      position:absolute; inset:0; width:100%; height:100%; border:0;
     }
-    .buttons a {
-      background: rgba(0, 0, 0, 0.6);
-      color: #FFD700;
-      padding: 0.75rem 2rem;
-      margin: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #ffd700a8;
-      transition: all 0.3s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      backdrop-filter: blur(4px);
+
+    /* Boutons sociaux */
+    .actions{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+      margin:1rem auto 0 auto; max-width:1100px;
     }
-    .buttons img {
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background: transparent;
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:.8rem 1.1rem; border-radius:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.55));
+      border:1px solid rgba(255,215,0,.22);
+      color:var(--ink); text-decoration:none; font-weight:800;
+      box-shadow:var(--shadow), var(--ring); transition:.2s ease;
     }
-    .buttons a:hover {
-      background: rgba(255, 240, 200, 0.2);
-      color: #fff;
-      transform: scale(1.07);
+    .btn img{width:28px; height:28px; border-radius:50%}
+    .btn:hover{transform:translateY(-1px) scale(1.02)}
+    .btn--discord{--c:#5865F2; outline:2px solid rgba(88,101,242,.25)}
+    .btn--fb{--c:#1877F2; outline:2px solid rgba(24,119,242,.25)}
+
+    /* Pied + compteur */
+    footer{
+      max-width:1100px; margin:1.25rem auto 2rem auto; padding:1rem;
+      text-align:center; font-style:italic; background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18); border-radius:14px; box-shadow:var(--shadow), var(--ring);
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-style: italic;
-      color: #aaa;
-      background: rgba(0, 0, 0, 0.6);
-      border-top: 2px solid #333;
-      font-size: 1.1rem;
+    .counter{
+      margin-top:.75rem; display:flex; align-items:center; justify-content:center; gap:10px;
+      font-size:.95rem; opacity:.95;
+    }
+    .counter img{filter:drop-shadow(0 4px 10px rgba(0,0,0,.5))}
+    /* Responsive nav */
+    @media (max-width:780px){
+      nav{display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end}
+      .brand{font-size:1rem}
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#">Accueil</a>
-    <a href="anoblissements.html">Joueurs Anoblis au Royaume Kayn</a>
-    <a href="#evenements">Événements</a>
-    <a href="#recrutement">Recrutement</a>
-  </nav>
 
+  <!-- En-tête + menu -->
   <header>
-    <img src="https://i.imgur.com/WOCMg41.png" alt="Le Royaume Kayn">
+    <div class="navbar">
+      <div class="brand" aria-label="Royaume Kayn">
+        <span style="color:var(--gold)">ROYAUME KAYN</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <a href="#intro">Accueil</a>
+        <a href="anoblissements.html">Joueurs Anoblis</a>
+        <a href="#events">Événements</a>
+        <a href="#recrutement">Recrutement</a>
+      </nav>
+    </div>
+    <!-- Bannière GRAND FORMAT (inchangée) -->
+    <img class="banner" src="https://i.imgur.com/WOCMg41.png" alt="Bannière officielle du Royaume Kayn" loading="eager" />
   </header>
 
-  <div class="video-section">
-    <iframe src="https://www.youtube.com/embed/jN9QX0JoKUo?autoplay=1&mute=1&controls=1" allowfullscreen></iframe>
-  </div>
+  <!-- Vidéo (séparée, non recouverte) -->
+  <section class="video-wrap" aria-labelledby="videoTitle">
+    <h2 id="videoTitle" style="padding:1rem 1.25rem 0 1.25rem;">Chroniques du Royaume</h2>
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/jN9QX0JoKUo?rel=0&controls=1&modestbranding=1"
+        title="Présentation du Royaume Kayn" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </section>
 
-  <section class="intro">
-    <p>
-      Entrez dans la <strong>Légion du Lion</strong> : une guilde JdR d'exception.<br>
-      Le <strong>Royaume Kayn</strong> est un Label de Guildes hébergées sur le Serveur JDR <em>Les Sentinelles</em>, accessibles aux joueurs de tous les serveurs World of Warcraft JdR associés.<br><br>
-      Ici, chaque joueur trace sa destinée dans une campagne scénarisée à choix, aux récompenses persistantes.<br><br>
-      Anoblissements. Quêtes vivantes. Objets sacrés. Sceaux d’honneur.<br>
-      <em>Ce n’est pas un simple serveur. C’est un Royaume en éveil.</em>
+  <!-- Intro -->
+  <section id="intro" class="section" aria-labelledby="introTitle">
+    <h2 id="introTitle">Entrer dans le Royaume</h2>
+    <p class="lead">
+      Le <strong>Royaume Kayn</strong> est un <strong>Label de Guildes</strong> hébergées sur le serveur JdR
+      <em>Les Sentinelles</em> (et serveurs JdR associés). Ici, chaque joueur trace sa destinée dans une campagne
+      scénarisée à choix, aux récompenses persistantes.
+      <br><br>
+      <strong>Anoblissements</strong> • <strong>Quêtes vivantes</strong> • <strong>Objets sacrés TRP3</strong> • <strong>Sceaux d’honneur</strong>.<br>
+      Ce n’est pas un simple serveur. <em>C’est un Royaume en éveil.</em>
     </p>
   </section>
 
-  <section class="buttons">
-    <a href="https://discord.gg/y7fhpRfFgA" target="_blank">
-      <img src="https://i.imgur.com/J1wAlw9.png" alt="Discord Légion du Lion">Rejoindre le Discord
-    </a>
-    <a href="https://www.facebook.com/Guildes.RK" target="_blank">
-      <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook Royaume Kayn">Voir la page Facebook
-    </a>
+  <!-- Événements -->
+  <section id="events" class="section" aria-labelledby="eventsTitle">
+    <h2 id="eventsTitle">Événements & Campagnes</h2>
+    <p class="lead">
+      Veillées Arathies, anoblissements publics, escortes, campagnes militaires et cérémonies de la Flamme.
+      Rejoignez les annonces sur notre Discord pour participer aux prochains chapitres.
+    </p>
   </section>
 
+  <!-- Recrutement -->
+  <section id="recrutement" class="section" aria-labelledby="recrutTitle">
+    <h2 id="recrutTitle">Recrutement</h2>
+    <p class="lead">
+      Le Royaume Kayn accueille toutes les vocations : conteurs, guerriers, soignants, artisans, éclaireurs.
+      Les joueurs débutants comme confirmés trouvent leur place dans nos récits et nos ordres.
+    </p>
+  </section>
+
+  <!-- Boutons sociaux -->
+  <div class="actions" aria-label="Raccourcis communautaires">
+    <a class="btn btn--discord" href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener">
+      <img src="https://i.imgur.com/J1wAlw9.png" alt="Discord" loading="lazy" />
+      Rejoindre le Discord
+    </a>
+    <a class="btn btn--fb" href="https://www.facebook.com/Guildes.RK" target="_blank" rel="noopener">
+      <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook" loading="lazy" />
+      Voir la page Facebook
+    </a>
+  </div>
+
+  <!-- Pied de page + compteur -->
   <footer>
-    “Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter.”
+    « Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter. »
+    <div class="counter" aria-label="Compteur de visiteurs">
+      <span>Visiteurs :</span>
+      <!-- SimpleHitCounter (image) -->
+      <img src="https://simplehitcounter.com/hit.php?uid=301515155&f=0&b=16777215" alt="Compteur de visiteurs" loading="lazy">
+    </div>
   </footer>
 </body>
 </html>
