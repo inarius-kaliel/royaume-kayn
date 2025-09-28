@@ -28,7 +28,6 @@
       scroll-behavior:smooth;
     }
 
-    /* En-tête cohérent avec index */
     header{
       padding:1rem 1rem 0;
       border-bottom:2px solid rgba(255,215,0,.15);
@@ -53,22 +52,8 @@
       height:auto; object-fit:contain; filter:drop-shadow(0 10px 30px rgba(0,0,0,.6));
     }
 
-    /* Ornement royal (séparateur) */
-    .ornament{
-      max-width:980px; margin:2rem auto; display:block; filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));
-    }
-    .ornament svg{width:100%; height:auto; display:block}
-    @keyframes glow{
-      0%{opacity:.6; filter:drop-shadow(0 0 2px var(--gold))}
-      50%{opacity:1; filter:drop-shadow(0 0 10px var(--gold))}
-      100%{opacity:.6; filter:drop-shadow(0 0 2px var(--gold))}
-    }
-    .gems{animation:glow 3.5s infinite ease-in-out}
-
-    /* Conteneur */
     .wrap{max-width:1100px; margin:1.25rem auto; padding:0 1rem}
 
-    /* Carte d'identité (gabarit) */
     .id-card{
       display:grid; grid-template-columns:280px 1fr; gap:1.25rem;
       background:var(--card-bg);
@@ -105,7 +90,6 @@
     .role{font-weight:700}
     .quote{font-style:italic; color:#f1e3a6}
 
-    /* Boutons actions (Histoire) */
     .actions{display:flex; gap:.65rem; flex-wrap:wrap; margin-top:.5rem}
     .action-btn{
       display:inline-flex; align-items:center; gap:.5rem;
@@ -116,9 +100,7 @@
       box-shadow:var(--ring); transition:.2s ease;
     }
     .action-btn:hover{transform:translateY(-1px) scale(1.02); color:var(--gold)}
-    .action-btn img{width:26px; height:26px; object-fit:contain}
 
-    /* Badge coin (optionnel) */
     .badge{
       position:absolute; top:10px; right:10px;
       background:rgba(0,0,0,.5);
@@ -127,7 +109,6 @@
       display:flex; align-items:center; gap:.4rem;
     }
 
-    /* Responsive */
     @media (max-width:860px){
       .id-card{grid-template-columns:1fr}
       .id-name{font-size:1.7rem}
@@ -136,7 +117,6 @@
 </head>
 <body>
 
-  <!-- En-tête -->
   <header>
     <div class="navbar">
       <div class="brand">ROYAUME KAYN</div>
@@ -147,45 +127,15 @@
         <a href="index.html#recrutement">Recrutement</a>
       </nav>
     </div>
-    <img class="banner" src="https://i.imgur.com/WOCMg41.png" alt="Bannière officielle du Royaume Kayn" loading="eager">
+    <img class="banner" src="https://i.imgur.com/WOCMg41.png" alt="Bannière officielle du Royaume Kayn">
   </header>
-
-  <!-- Ornement -->
-  <figure class="ornament" aria-hidden="true">
-    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g1" x1="0" x2="1">
-          <stop offset="0%" stop-color="#9b7c00"/>
-          <stop offset="50%" stop-color="#ffd700"/>
-          <stop offset="100%" stop-color="#9b7c00"/>
-        </linearGradient>
-        <radialGradient id="gem" cx="50%" cy="50%" r="60%">
-          <stop offset="0%" stop-color="#fff7bf"/>
-          <stop offset="50%" stop-color="#ffd700"/>
-          <stop offset="100%" stop-color="#b28b00"/>
-        </radialGradient>
-      </defs>
-      <path d="M40,60 C160,10 280,110 400,60 S640,10 800,60 1040,110 1160,60" fill="none" stroke="url(#g1)" stroke-width="3" opacity=".85"/>
-      <circle class="gems" cx="600" cy="60" r="10" fill="url(#gem)"/>
-    </svg>
-  </figure>
 
   <main class="wrap" aria-label="Cour Royalle">
 
-    <!-- ========= ID CARD : Înnana Âeris =========
-         Pour ajouter un noble :
-         1) Duplique ce bloc <section class="id-card">…</section>
-         2) Remplace portrait, nom, titres, dates, rôle, citation et liens.
-         3) Remplace l'URL du blason (PNG fond transparent si possible).
-    ============================================ -->
     <section class="id-card">
-      <!-- Badge optionnel (rang/ordre) -->
       <div class="badge"><i class="fa-solid fa-crown"></i> Noble</div>
-
-      <!-- Portrait -->
       <img class="portrait" src="https://i.imgur.com/HbIeioE.jpeg" alt="Portrait de Înnana Âeris">
 
-      <!-- Corps de carte -->
       <div class="id-body">
         <h2 class="id-name">
           <img class="blason" src="https://i.imgur.com/XXu30Qv.jpeg" alt="Blason de classe">
@@ -204,36 +154,15 @@
         <p class="quote">« Je suis une jolie fleur de Draenor, mais un bouclier… tu peux aussi te le prendre dans la face ! »</p>
 
         <div class="actions">
-          <!-- Bouton Histoire : remplace le lien par l’URL du salon Discord -->
+          <!-- Bouton Histoire avec emoji -->
           <a class="action-btn" href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener">
-            <img src="bouton parchemin.png" alt="Histoire RP">
-            Lire son Histoire
+            📜 Lire son Histoire
           </a>
-          <!-- Exemple de second bouton (facultatif) : feuille de personnage, album, etc. -->
-          <!-- <a class="action-btn" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-book"></i> Feuille de personnage</a> -->
         </div>
       </div>
     </section>
-    <!-- ========= /ID CARD ========= -->
-
-    <!-- Tu peux coller ici d'autres cartes en dupliquant le bloc ci-dessus -->
 
   </main>
-
-  <!-- Ornement -->
-  <figure class="ornament" aria-hidden="true">
-    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g2" x1="0" x2="1">
-          <stop offset="0%" stop-color="#8e7300"/>
-          <stop offset="50%" stop-color="#ffd700"/>
-          <stop offset="100%" stop-color="#8e7300"/>
-        </linearGradient>
-      </defs>
-      <path d="M60,70 C220,20 340,120 500,70 S760,20 940,70 1120,120 1140,70" fill="none" stroke="url(#g2)" stroke-width="3" opacity=".85"/>
-      <circle class="gems" cx="600" cy="60" r="8" fill="url(#g2)"/>
-    </svg>
-  </figure>
 
   <footer class="wrap" style="background:var(--panel-bg); border:1px solid rgba(255,215,0,.18); border-radius:14px; padding:1rem; text-align:center; box-shadow:var(--shadow), var(--ring);">
     « Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter. »
