@@ -1,171 +1,243 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cour Royalle — Royaume Kayn</title>
-
-  <!-- Polices & Icônes -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6ad5d.js" crossorigin="anonymous"></script>
   <style>
-    :root{
-      --gold:#ffd700;
-      --panel-bg:rgba(0,0,0,.55);
-      --ink:#f7f3cf;
-      --shadow:0 14px 40px rgba(0,0,0,.45);
-      --ring:0 0 0 1px rgba(255,215,0,.25) inset;
-      --card-bg:rgba(0,0,0,.6);
-      --line:#e9d27a;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; color:var(--ink);
-      font-family:'Libre Baskerville', serif;
-      background:#000 url("https://i.imgur.com/z0xyQ00.jpeg") no-repeat center top fixed;
-      background-size:cover;
-      scroll-behavior:smooth;
+    body {
+      margin: 0;
+      font-family: 'IM Fell English SC', serif;
+      background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f4d992;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
-    header{
-      padding:1rem 1rem 0;
-      border-bottom:2px solid rgba(255,215,0,.15);
-      backdrop-filter:saturate(120%) blur(2px);
-    }
-    .navbar{
-      max-width:1100px; margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    }
-    .brand{font-family:'Cinzel',serif; font-weight:800; color:var(--gold); letter-spacing:.5px}
-    nav a{
-      color:var(--ink); text-decoration:none; font-weight:700;
-      padding:.6rem 1rem; border-radius:10px;
-      background:rgba(0,0,0,.25);
-      border:1px solid rgba(255,215,0,.22);
-      box-shadow:var(--ring);
-      transition:.2s ease;
-    }
-    nav a:hover{transform:translateY(-1px); color:var(--gold)}
-    .banner{
-      display:block; width:min(1400px,94vw); margin:1rem auto 0 auto;
-      height:auto; object-fit:contain; filter:drop-shadow(0 10px 30px rgba(0,0,0,.6));
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 3px solid #d4af37;
+      box-shadow: 0 0 20px #000;
     }
 
-    .wrap{max-width:1100px; margin:1.25rem auto; padding:0 1rem}
-
-    .id-card{
-      display:grid; grid-template-columns:280px 1fr; gap:1.25rem;
-      background:var(--card-bg);
-      border:1px solid rgba(255,215,0,.22);
-      border-radius:16px; padding:1.25rem;
-      box-shadow:var(--shadow), var(--ring);
-      margin:1.25rem 0;
-      position:relative;
-    }
-    .portrait{
-      width:100%; aspect-ratio:3/4; object-fit:cover;
-      border-radius:12px; box-shadow:0 0 14px rgba(0,0,0,.6);
-      border:1px solid rgba(255,215,0,.18);
-    }
-    .id-body{display:flex; flex-direction:column; gap:.6rem}
-    .id-name{
-      display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
-      margin:0;
-      font-family:'Cinzel',serif; font-weight:800; color:var(--gold); font-size:2rem;
-      text-shadow:0 0 12px rgba(255,215,0,.25);
-    }
-    .blason{
-      width:56px; height:56px; object-fit:contain; border-radius:50%;
-      box-shadow:0 0 12px rgba(0,0,0,.55);
-      border:1px solid rgba(255,215,0,.25);
-      background:rgba(0,0,0,.35);
-    }
-    .meta{display:flex; gap:1rem; flex-wrap:wrap; opacity:.95}
-    .meta span{white-space:nowrap}
-    .line{
-      height:2px; background:linear-gradient(90deg, transparent, var(--line), transparent);
-      border-radius:2px; margin:.35rem 0 .6rem 0;
-    }
-    .role{font-weight:700}
-    .quote{font-style:italic; color:#f1e3a6}
-
-    .actions{display:flex; gap:.65rem; flex-wrap:wrap; margin-top:.5rem}
-    .action-btn{
-      display:inline-flex; align-items:center; gap:.5rem;
-      padding:.6rem .9rem; border-radius:10px;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,215,0,.22);
-      color:var(--ink); text-decoration:none; font-weight:800;
-      box-shadow:var(--ring); transition:.2s ease;
-    }
-    .action-btn:hover{transform:translateY(-1px) scale(1.02); color:var(--gold)}
-
-    .badge{
-      position:absolute; top:10px; right:10px;
-      background:rgba(0,0,0,.5);
-      border:1px solid rgba(255,215,0,.25);
-      color:var(--gold); padding:.25rem .5rem; border-radius:10px; font-weight:800;
-      display:flex; align-items:center; gap:.4rem;
+    header img {
+      max-width: 60%;
+      filter: drop-shadow(0 0 10px gold);
     }
 
-    @media (max-width:860px){
-      .id-card{grid-template-columns:1fr}
-      .id-name{font-size:1.7rem}
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      padding: 0.8rem 0;
+      box-shadow: 0 0 10px #000;
+    }
+
+    nav a {
+      color: #f4d992;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px gold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+
+    .id-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #d4af37;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      backdrop-filter: blur(3px);
+    }
+
+    .id-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .portrait {
+      width: 280px;
+      height: auto;
+      border-right: 2px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .id-body {
+      flex: 1;
+      padding: 1.5rem 2rem;
+      color: #f4d992;
+    }
+
+    .id-name {
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 0 0 8px #000, 0 0 15px #d4af37;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .blason {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    .meta span {
+      display: block;
+      font-size: 1.1rem;
+      color: #e9c96f;
+      margin: 3px 0;
+    }
+
+    .line {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d4af37, transparent);
+      margin: 1rem 0;
+    }
+
+    .role {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #e6e0b0;
+      margin-top: 0.8rem;
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+    }
+
+    .action-btn {
+      background: rgba(212, 175, 55, 0.2);
+      color: #f4d992;
+      border: 1px solid #d4af37;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 215, 0, 0.3);
+      color: #fff;
+      box-shadow: 0 0 12px gold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #c1a85b;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 1px solid #d4af37;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <div class="navbar">
-      <div class="brand">ROYAUME KAYN</div>
-      <nav aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="anoblissements.html"><strong>Cour Royalle</strong></a>
-        <a href="index.html#events">Événements</a>
-        <a href="index.html#recrutement">Recrutement</a>
-      </nav>
-    </div>
-    <img class="banner" src="https://i.imgur.com/WOCMg41.png" alt="Bannière officielle du Royaume Kayn">
+    <img src="https://i.imgur.com/WOCMg41.png" alt="Bannière du Royaume Kayn">
   </header>
 
-  <main class="wrap" aria-label="Cour Royalle">
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="anoblissements.html">Cour Royalle</a>
+    <a href="#">Événements</a>
+    <a href="#">Recrutement</a>
+  </nav>
 
+  <main class="container">
+
+    <!-- ========= ID CARD : ÎNNANA ========= -->
     <section class="id-card">
-      <div class="badge"><i class="fa-solid fa-crown"></i> Noble</div>
-      <img class="portrait" src="https://i.imgur.com/HbIeioE.jpeg" alt="Portrait de Înnana Âeris">
-
+      <img class="portrait" src="https://i.imgur.com/HbIeioE.jpeg" alt="Portrait d’Înnana Âeris">
       <div class="id-body">
         <h2 class="id-name">
-          <img class="blason" src="https://i.imgur.com/XXu30Qv.jpeg" alt="Blason de classe">
+          <img class="blason" src="https://i.imgur.com/XXu30Qv.jpeg" alt="Blason de classe (Paladin)">
           Înnana Âeris
         </h2>
-
         <div class="meta">
           <span><strong>Titre :</strong> Dame</span>
           <span><strong>Rang :</strong> Noble du Royaume Kayn</span>
-          <span><strong>Anoblissement :</strong> 5 août 2025</span>
+          <span><strong>Anoblissement :</strong> 05/08/2025</span>
         </div>
-
         <div class="line"></div>
-
-        <p class="role"><strong>Rôle :</strong> Égide du Royaume Kayn <em>[Tank]</em></p>
-        <p class="quote">« Je suis une jolie fleur de Draenor, mais un bouclier… tu peux aussi te le prendre dans la face ! »</p>
-
+        <p class="role"><strong>Rôle :</strong> Égide du Royaume Kayn [Tank]</p>
+        <p class="quote">« Je suis une jolie fleur de Draenor... mais un bouclier, tu peux aussi te le prendre dans la face ! »</p>
         <div class="actions">
-          <!-- Bouton Histoire avec emoji -->
-          <a class="action-btn" href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener">
-            📜 Lire son Histoire
-          </a>
+          <a class="action-btn" href="https://discord.gg/y7fhpRfFgA" target="_blank">📜 Lire son Histoire</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= ID CARD : OCEA ========= -->
+    <section class="id-card">
+      <img class="portrait" src="https://i.imgur.com/q23HGrY.jpeg" alt="Portrait d’Ocea">
+      <div class="id-body">
+        <h2 class="id-name">
+          <img class="blason" src="https://i.imgur.com/XXu30Qv.jpeg" alt="Blason de classe (Mage)">
+          Dame Ocea
+        </h2>
+        <div class="meta">
+          <span><strong>Titre :</strong> Dame</span>
+          <span><strong>Rang :</strong> Noble du Royaume Kayn</span>
+          <span><strong>Anoblissement :</strong> 2025</span>
+        </div>
+        <div class="line"></div>
+        <p class="role"><strong>Rôle :</strong> Mage de la Cour (Arcanes)</p>
+        <p class="quote">« Le silence de la nuit amplifie l’éclat de l’arcane. »</p>
+        <div class="actions">
+          <a class="action-btn" href="https://discord.gg/y7fhpRfFgA" target="_blank">📜 Lire son Histoire</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="wrap" style="background:var(--panel-bg); border:1px solid rgba(255,215,0,.18); border-radius:14px; padding:1rem; text-align:center; box-shadow:var(--shadow), var(--ring);">
-    « Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter. »
+  <footer>
+    Royaume Kayn — Cour Royalle des Nobles & Légendes du Royaume.<br>
+    <em>« Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter. »</em>
   </footer>
+
+  <script>
+    // Effet fade-in au défilement
+    const cards = document.querySelectorAll('.id-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
