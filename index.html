@@ -1,165 +1,321 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royaume Kayn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: "Cinzel", serif;
-            background: url('https://i.imgur.com/z0xyQ00.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            color: #d4af37;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royaume Kayn — Campagne RP Warcraft</title>
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-        }
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Icônes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #d4af37;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-        }
+  <!-- SEO / Partage -->
+  <meta name="description" content="Royaume Kayn — Label de guildes RP sur Les Sentinelles. PvP, Mythiques+, Raids, RP et événements. Entrez dans le Royaume.">
+  <meta property="og:title" content="Royaume Kayn — Campagne RP Warcraft">
+  <meta property="og:description" content="Anoblissements, quêtes vivantes, sceaux d'honneur. PvP, M+, raids et toutes les activités de WoW.">
+  <meta property="og:image" content="https://i.imgur.com/WOCMg41.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0b10">
 
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-        }
+  <style>
+    :root{
+      --gold:#ffd700;
+      --gold-soft:#f3d87a;
+      --panel-bg:rgba(0,0,0,.55);
+      --ink:#f7f3cf;
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --ring:0 0 0 1px rgba(255,215,0,.25) inset;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Libre Baskerville', serif;
+      color:var(--ink);
+      background:#000 url("https://i.imgur.com/z0xyQ00.jpeg") no-repeat center top fixed;
+      background-size:cover;
+      scroll-behavior:smooth;
+    }
 
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.2em;
-            transition: 0.3s;
-        }
+    /* En-tête */
+    header{
+      padding:1rem 1rem 0;
+      border-bottom:2px solid rgba(255,215,0,.15);
+      backdrop-filter:saturate(120%) blur(2px);
+    }
+    .navbar{
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .brand{font-family:'Cinzel',serif; font-weight:800; color:var(--gold); letter-spacing:.5px}
+    nav a{
+      color:var(--ink); text-decoration:none; font-weight:700;
+      padding:.6rem 1rem; border-radius:10px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,215,0,.22);
+      box-shadow:var(--ring);
+      transition:.2s ease;
+    }
+    nav a:hover{transform:translateY(-1px); color:var(--gold)}
 
-        nav a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px #ffd700;
-        }
+    .banner{
+      display:block; width:min(1400px,94vw); margin:1rem auto 0 auto;
+      height:auto; object-fit:contain;
+      filter:drop-shadow(0 10px 30px rgba(0,0,0,.6));
+    }
 
-        section {
-            padding: 50px;
-            text-align: center;
-        }
+    /* Panneaux */
+    .section{
+      max-width:1100px; margin:1.25rem auto; padding:1.25rem;
+      background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:16px;
+      box-shadow:var(--shadow), var(--ring);
+    }
+    .section h2{
+      margin:.2rem 0 1rem 0;
+      font-family:'Cinzel',serif; font-weight:800; color:var(--gold);
+      text-align:center;
+      text-shadow:0 0 12px rgba(255,215,0,.25);
+    }
+    .lead{font-size:1.1rem; line-height:1.75}
 
-        .objectifs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
+    /* Ornement royal (SVG) */
+    .ornament{
+      max-width:980px; margin:2rem auto; display:block; filter:drop-shadow(0 6px 18px rgba(0,0,0,.45));
+      transform:translateZ(0);
+    }
+    .ornament svg{width:100%; height:auto; display:block}
+    /* Lueur animée douce */
+    @keyframes glow {
+      0% { opacity:.6; filter:drop-shadow(0 0 2px var(--gold)); }
+      50%{ opacity:1; filter:drop-shadow(0 0 10px var(--gold)); }
+      100%{opacity:.6; filter:drop-shadow(0 0 2px var(--gold));}
+    }
+    .ornament .gems{animation:glow 3.5s infinite ease-in-out}
+    .ornament .strokes{opacity:.9}
 
-        .objectif {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            padding: 30px;
-            width: 250px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
-            transition: transform 0.3s ease;
-        }
+    /* Objectifs + icônes */
+    .objectifs-list{
+      list-style:none; padding:0; margin:0;
+      display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+    }
+    .objectifs-list li{
+      display:flex; align-items:center; gap:14px;
+      background:rgba(0,0,0,.4);
+      padding:.9rem 1rem; border-radius:12px;
+      border:1px solid rgba(255,215,0,.18);
+      box-shadow:var(--shadow), var(--ring);
+      transition:.25s ease;
+    }
+    .objectifs-list li:hover{transform:translateY(-2px) scale(1.02)}
+    .objectifs-list i{
+      font-size:1.5rem;
+      color:var(--gold);
+      filter:drop-shadow(0 0 8px rgba(255,215,0,.5));
+      min-width:30px; text-align:center;
+    }
 
-        .objectif:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-        }
+    /* Vidéo */
+    .video-wrap{
+      max-width:1100px; margin:1.25rem auto 0 auto;
+      background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18);
+      border-radius:16px; overflow:hidden;
+      box-shadow:var(--shadow), var(--ring);
+    }
+    .video{position:relative; width:100%; aspect-ratio:16/9}
+    .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 
-        .objectif i {
-            font-size: 3em;
-            color: #ffd700;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px #d4af37;
-        }
+    /* Boutons sociaux */
+    .actions{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+      margin:1rem auto 0 auto; max-width:1100px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:.8rem 1.1rem; border-radius:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.55));
+      border:1px solid rgba(255,215,0,.22);
+      color:var(--ink); text-decoration:none; font-weight:800;
+      box-shadow:var(--shadow), var(--ring); transition:.2s ease;
+    }
+    .btn img{width:28px; height:28px; border-radius:50%}
+    .btn:hover{transform:translateY(-1px) scale(1.02)}
 
-        .objectif h3 {
-            font-size: 1.5em;
-            color: #d4af37;
-        }
+    /* Pied de page */
+    footer{
+      max-width:1100px; margin:1.25rem auto 2rem auto; padding:1rem;
+      text-align:center; font-style:italic; background:var(--panel-bg);
+      border:1px solid rgba(255,215,0,.18); border-radius:14px; box-shadow:var(--shadow), var(--ring);
+    }
 
-        .objectif p {
-            color: #f5f5dc;
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.85);
-            color: #d4af37;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9em;
-        }
-
-        #visitor-counter {
-            margin-top: 15px;
-        }
-    </style>
+    /* Responsive */
+    @media (max-width:820px){
+      .objectifs-list{grid-template-columns:1fr}
+      nav{display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end}
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>⚜️ Royaume Kayn ⚜️</h1>
-        <p>“L’Honneur unit ceux que le destin a choisis.”</p>
-    </header>
+  <!-- En-tête -->
+  <header>
+    <div class="navbar">
+      <div class="brand">ROYAUME KAYN</div>
+      <nav aria-label="Navigation principale">
+        <a href="#intro">Accueil</a>
+        <a href="anoblissements.html">Joueurs Anoblis</a>
+        <a href="#events">Événements</a>
+        <a href="#recrutement">Recrutement</a>
+      </nav>
+    </div>
+    <img class="banner" src="https://i.imgur.com/WOCMg41.png" alt="Bannière officielle du Royaume Kayn" loading="eager">
+  </header>
 
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="anoblissements.html">Cour Royalle</a>
-        <a href="#">Événements</a>
-        <a href="#">Recrutement</a>
-        <a href="https://discord.gg/">Discord</a>
-    </nav>
+  <!-- Vidéo -->
+  <section class="video-wrap" aria-labelledby="videoTitle">
+    <h2 id="videoTitle" style="padding:1rem 1.25rem 0 1.25rem;">Chroniques du Royaume</h2>
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/jN9QX0JoKUo?rel=0&controls=1&modestbranding=1"
+        title="Présentation du Royaume Kayn"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </section>
 
-    <section id="objectifs">
-        <h2>Nos Objectifs</h2>
-        <div class="objectifs">
-            
-            <div class="objectif">
-                <i class="fa-solid fa-swords"></i>
-                <h3>PVP</h3>
-                <p>Combattez pour la gloire du Royaume dans les champs de bataille et les arènes de World of Warcraft.</p>
-            </div>
+  <!-- Ornement -->
+  <figure class="ornament" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#9b7c00"/>
+          <stop offset="50%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#9b7c00"/>
+        </linearGradient>
+        <radialGradient id="gem" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#fff7bf"/>
+          <stop offset="50%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#b28b00"/>
+        </radialGradient>
+      </defs>
+      <!-- arabesques -->
+      <path class="strokes" d="M40,60 C160,10 280,110 400,60 S640,10 800,60 1040,110 1160,60" fill="none" stroke="url(#g1)" stroke-width="3" opacity=".85"/>
+      <path class="strokes" d="M80,75 C200,25 320,125 440,75 S680,25 840,75 1080,125 1120,75" fill="none" stroke="url(#g1)" stroke-width="2" opacity=".65"/>
+      <!-- fleurons latéraux -->
+      <path class="strokes" d="M140 60 l-20 -20 m20 20 l-20 20 M1060 60 l20 -20 m-20 20 l20 20"
+            stroke="url(#g1)" stroke-width="3" fill="none" opacity=".9"/>
+      <!-- gemme centrale -->
+      <circle class="gems" cx="600" cy="60" r="10" fill="url(#gem)" />
+      <circle class="gems" cx="600" cy="60" r="18" fill="none" stroke="url(#g1)" stroke-width="2" opacity=".8"/>
+    </svg>
+  </figure>
 
-            <div class="objectif">
-                <i class="fa-solid fa-dragon"></i>
-                <h3>Raids & Mythiques+</h3>
-                <p>Affrontez les plus puissants ennemis d’Azeroth et domptez les défis des donjons mythiques en équipe.</p>
-            </div>
+  <!-- Intro -->
+  <section id="intro" class="section" aria-labelledby="introTitle">
+    <h2 id="introTitle">Entrer dans le Royaume</h2>
+    <p class="lead">
+      Le <strong>Royaume Kayn</strong> est un <strong>Label de Guildes</strong> hébergées sur le serveur JdR
+      <em>Les Sentinelles</em> (et serveurs JdR associés). Ici, chaque joueur trace sa destinée dans une campagne
+      scénarisée à choix, aux récompenses persistantes.
+      <br><br>
+      <strong>Anoblissements</strong> • <strong>Quêtes vivantes</strong> • <strong>Objets TRP3</strong> • <strong>Sceaux d’honneur</strong>.<br>
+      Ce n’est pas un simple serveur. <em>C’est un Royaume en éveil.</em>
+    </p>
+  </section>
 
-            <div class="objectif">
-                <i class="fa-solid fa-scroll"></i>
-                <h3>Roleplay</h3>
-                <p>Vivez l’histoire du Royaume Kayn à travers les quêtes, les récits et les anoblissements de ses héros.</p>
-            </div>
+  <!-- Ornement -->
+  <figure class="ornament" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+      <use href="#pattern" />
+      <defs>
+        <linearGradient id="g2" x1="0" x2="1">
+          <stop offset="0%" stop-color="#8e7300"/>
+          <stop offset="50%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#8e7300"/>
+        </linearGradient>
+      </defs>
+      <path class="strokes" d="M60,70 C220,20 340,120 500,70 S760,20 940,70 1120,120 1140,70" fill="none" stroke="url(#g2)" stroke-width="3" opacity=".85"/>
+      <circle class="gems" cx="600" cy="60" r="8" fill="url(#g2)" />
+    </svg>
+  </figure>
 
-            <div class="objectif">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Communauté</h3>
-                <p>Unissez-vous à une confrérie soudée, loyale et bienveillante où chaque joueur a sa place.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Objectifs -->
+  <section id="objectifs" class="section" aria-labelledby="objTitle">
+    <h2 id="objTitle">Nos Objectifs</h2>
+    <ul class="objectifs-list">
+      <li><i class="fas fa-crossed-swords"></i> <strong>PvP</strong> — Champs de bataille, arènes et escarmouches.</li>
+      <li><i class="fas fa-dungeon"></i> <strong>Donjons Mythiques+</strong> — Progression et optimisation d’équipe.</li>
+      <li><i class="fas fa-dragon"></i> <strong>Raids Épiques</strong> — Défier les adversaires les plus puissants.</li>
+      <li><i class="fas fa-feather-alt"></i> <strong>Roleplay</strong> — Quêtes vivantes, cérémonies et anoblissements.</li>
+      <li><i class="fas fa-globe"></i> <strong>Exploration</strong> — Secrets d’Azeroth, transmogrifications, montures.</li>
+      <li><i class="fas fa-fire"></i> <strong>Événements Communautaires</strong> — Festivités et campagnes scénarisées.</li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>© Royaume Kayn - Tous droits réservés</p>
-        <div id="visitor-counter">
-            <img src="https://www.simplehitcounter.com/hit.php?uid=3899467&f=0&b=16777215" alt="Compteur de visiteurs">
-        </div>
-    </footer>
+  <!-- Ornement -->
+  <figure class="ornament" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g3" x1="0" x2="1">
+          <stop offset="0%" stop-color="#9c7f00"/>
+          <stop offset="50%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#9c7f00"/>
+        </linearGradient>
+      </defs>
+      <path class="strokes" d="M40,60 C200,5 360,115 520,60 S800,5 960,60 1100,115 1160,60" fill="none" stroke="url(#g3)" stroke-width="3" opacity=".9"/>
+      <circle class="gems" cx="600" cy="60" r="7" fill="url(#g3)" />
+    </svg>
+  </figure>
 
+  <!-- Événements -->
+  <section id="events" class="section" aria-labelledby="eventsTitle">
+    <h2 id="eventsTitle">Événements & Campagnes</h2>
+    <p class="lead">
+      Veillées Arathies, anoblissements publics, escortes, campagnes militaires et cérémonies de la Flamme.
+      Rejoignez nos annonces Discord pour participer aux prochains chapitres.
+    </p>
+  </section>
+
+  <!-- Ornement -->
+  <figure class="ornament" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g4" x1="0" x2="1">
+          <stop offset="0%" stop-color="#8a6f00"/>
+          <stop offset="50%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#8a6f00"/>
+        </linearGradient>
+      </defs>
+      <path class="strokes" d="M80,70 C260,25 380,115 560,70 S840,25 1020,70 1100,110 1120,70" fill="none" stroke="url(#g4)" stroke-width="3" opacity=".9"/>
+      <circle class="gems" cx="600" cy="60" r="7" fill="url(#g4)" />
+    </svg>
+  </figure>
+
+  <!-- Recrutement -->
+  <section id="recrutement" class="section" aria-labelledby="recrutTitle">
+    <h2 id="recrutTitle">Rejoindre le Royaume</h2>
+    <p class="lead">
+      Le Royaume Kayn accueille toutes les vocations : conteurs, guerriers, soignants, artisans, éclaireurs.
+      Débutants ou vétérans, chacun trouve sa place dans nos ordres et nos récits.
+    </p>
+  </section>
+
+  <!-- Boutons sociaux -->
+  <div class="actions" aria-label="Raccourcis communautaires">
+    <a class="btn" href="https://discord.gg/y7fhpRfFgA" target="_blank" rel="noopener">
+      <img src="https://i.imgur.com/J1wAlw9.png" alt="Discord"> Rejoindre le Discord
+    </a>
+    <a class="btn" href="https://www.facebook.com/Guildes.RK" target="_blank" rel="noopener">
+      <img src="https://i.imgur.com/MNJNKoJ.png" alt="Facebook"> Voir la page Facebook
+    </a>
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    « Ce n’est pas ton nom qui te précède, c’est ce que tu offres pour le mériter. »
+  </footer>
 </body>
 </html>
