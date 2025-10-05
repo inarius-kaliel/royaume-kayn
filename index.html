@@ -87,7 +87,6 @@
       transform:translateZ(0);
     }
     .ornament svg{width:100%; height:auto; display:block}
-    /* Lueur animée douce */
     @keyframes glow {
       0% { opacity:.6; filter:drop-shadow(0 0 2px var(--gold)); }
       50%{ opacity:1; filter:drop-shadow(0 0 10px var(--gold)); }
@@ -110,11 +109,18 @@
       transition:.25s ease;
     }
     .objectifs-list li:hover{transform:translateY(-2px) scale(1.02)}
-    .objectifs-list i{
-      font-size:1.5rem;
-      color:var(--gold);
-      filter:drop-shadow(0 0 8px rgba(255,215,0,.5));
-      min-width:30px; text-align:center;
+    /* Médaillon d’icône harmonisé */
+    .icon-badge{
+      width:42px; height:42px; min-width:42px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:50%;
+      background:radial-gradient(65% 65% at 50% 45%, rgba(255,215,0,.35), rgba(0,0,0,.3));
+      border:1px solid rgba(255,215,0,.35);
+      box-shadow:0 6px 16px rgba(0,0,0,.35), inset 0 0 10px rgba(255,215,0,.15);
+    }
+    .icon-badge i{
+      font-size:1.05rem; line-height:1; color:var(--gold);
+      filter:drop-shadow(0 0 6px rgba(255,215,0,.45));
     }
 
     /* Vidéo */
@@ -243,13 +249,30 @@
   <section id="objectifs" class="section" aria-labelledby="objTitle">
     <h2 id="objTitle">Nos Objectifs</h2>
     <ul class="objectifs-list">
-      <!-- Correction ici : icône PVP fonctionnelle -->
-      <li><i class="fa-solid fa-swords"></i> <strong>PvP</strong> — Champs de bataille, arènes et escarmouches.</li>
-      <li><i class="fas fa-dungeon"></i> <strong>Donjons Mythiques+</strong> — Progression et optimisation d’équipe.</li>
-      <li><i class="fas fa-dragon"></i> <strong>Raids Épiques</strong> — Défier les adversaires les plus puissants.</li>
-      <li><i class="fas fa-feather-alt"></i> <strong>Roleplay</strong> — Quêtes vivantes, cérémonies et anoblissements.</li>
-      <li><i class="fas fa-globe"></i> <strong>Exploration</strong> — Secrets d’Azeroth, transmogrifications, montures.</li>
-      <li><i class="fas fa-fire"></i> <strong>Événements Communautaires</strong> — Festivités et campagnes scénarisées.</li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-shield-halved"></i></span>
+        <strong>PvP</strong> — Champs de bataille, arènes et escarmouches.
+      </li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-dungeon"></i></span>
+        <strong>Donjons Mythiques+</strong> — Progression et optimisation d’équipe.
+      </li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-dragon"></i></span>
+        <strong>Raids Épiques</strong> — Défier les adversaires les plus puissants.
+      </li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-scroll"></i></span>
+        <strong>Roleplay</strong> — Quêtes vivantes, cérémonies et anoblissements.
+      </li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-compass"></i></span>
+        <strong>Exploration</strong> — Secrets d’Azeroth, transmogrifications, montures.
+      </li>
+      <li>
+        <span class="icon-badge"><i class="fa-solid fa-flag"></i></span>
+        <strong>Événements Communautaires</strong> — Festivités et campagnes scénarisées.
+      </li>
     </ul>
   </section>
 
